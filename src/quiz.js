@@ -38,6 +38,22 @@ class Quiz {
       this.timeRemaining <= 0
     );
   }
+
+  filterQuestionsByDifficulty(difficulty) {
+    if (difficulty >= 1 && difficulty <= 3) {
+      this.questions = this.questions.filter(
+        (question) => question.difficulty === difficulty
+      );
+    }
+  }
+
+  averageDifficulty() {
+    let sum = 0;
+    for (let i = 0; i < this.questions.length; i++) {
+      sum += this.questions[i].difficulty;
+    }
+    return sum / this.questions.length;
+  }
 }
 
 // YOUR CODE HERE:
@@ -51,5 +67,3 @@ class Quiz {
 // 4. shuffleQuestions()
 
 // 5. checkAnswer(answer)
-
-// 6. hasEnded()

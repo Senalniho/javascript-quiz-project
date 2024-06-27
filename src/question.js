@@ -11,7 +11,7 @@ class Question {
       let j = Math.floor(Math.random() * (i + 1));
       let temp = this.choices[i];
       this.choices[i] = this.choices[j];
-      //   this.choices[j] = temp;
+      this.choices[j] = temp;
     }
   }
 }
